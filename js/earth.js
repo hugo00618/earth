@@ -19,6 +19,7 @@ var init3D = function() {
 	renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
 	var containerMinSize = Math.min($('#canvas').innerHeight(), $('#canvas').innerWidth());
 	renderer.setSize(containerMinSize, containerMinSize);
+	renderer.setPixelRatio(window.devicePixelRatio);
 	$('#canvas').append( renderer.domElement );
 
  	camera = new THREE.OrthographicCamera( containerMinSize / - 2, containerMinSize / 2, containerMinSize / 2, containerMinSize / - 2, 0.1, 1000 );
