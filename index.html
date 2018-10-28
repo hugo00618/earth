@@ -26,6 +26,9 @@
 <body>
 	<div id="fullpage" style="height: 100%">
 		<div class="landing section">
+			<a class="btn btn_apps" href="/">
+				<img src="assets/ic_apps.svg" width="48" />
+			</a>
 			<div id="canvas"></div>
 			<div class="learnmore_wrapper">
 				<input id="btnLearnMore" class="btn btn_learnmore" type="image" src="assets/ic_learnmore.svg" width="48" />
@@ -85,7 +88,7 @@ loader.load(
 	}
 );</pre>
 				<h3>Optimization for High DPI Displays</h3>
-				By default, THREE.WebGLRenderer renders at a @1x resolution. As a result, renderings on high DPI displays (e.g. macs with Retina Displays) will look blurry because of the higher pixel density they render at. This can be fixed by adjusting the pixel ratio of the renderer:
+				By default, WebGLRenderer renders at a @1x resolution. As a result, renderings on high DPI displays (e.g. Macs with Retina Display) will look blurry because of the higher pixel density they render at. This can be fixed by adjusting the pixel ratio of the renderer:
 				<pre class="prettyprint linenums">
 renderer.setPixelRatio(window.devicePixelRatio);</pre>					
 			</div>

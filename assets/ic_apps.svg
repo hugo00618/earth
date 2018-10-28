@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>apps</title>
+    <desc>Created with Sketch.</desc>
+    <g id="apps" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#AAAAAA" cx="256" cy="256" r="256"></circle>
+        <g id="baseline-apps-24px" transform="translate(76.000000, 76.000000)">
+            <path d="M60,120 L120,120 L120,60 L60,60 L60,120 Z M150,300 L210,300 L210,240 L150,240 L150,300 Z M60,300 L120,300 L120,240 L60,240 L60,300 Z M60,210 L120,210 L120,150 L60,150 L60,210 Z M150,210 L210,210 L210,150 L150,150 L150,210 Z M240,60 L240,120 L300,120 L300,60 L240,60 Z M150,120 L210,120 L210,60 L150,60 L150,120 Z M240,210 L300,210 L300,150 L240,150 L240,210 Z M240,300 L300,300 L300,240 L240,240 L240,300 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            <polygon id="Path" points="0 0 360 0 360 360 0 360"></polygon>
+        </g>
+    </g>
+</svg>
