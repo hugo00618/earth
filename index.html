@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Hugo Yu</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+	<link href="css/fullpage.css" rel="stylesheet"/>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="js/three.min.js"></script>
+	<script src="js/ObjectLoader.js"></script>
+	<script src="js/OrbitControls.js"></script>
+
+	<script src="js/scrolloverflow.min.js"></script>
+	<script src="js/fullpage.js"></script>
+
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<link href="css/tranquil-heart.min.css" rel="stylesheet"/>
+
+	<script src="js/earth.js"></script>
+	<link href="css/earth.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="fullpage" style="height: 100%">
+		<div class="landing section">
+			<div id="canvas"></div>
+			<div class="learnmore_wrapper">
+				<input id="btnLearnMore" class="btn btn_learnmore" type="image" src="assets/ic_learnmore.svg" width="48" />
+			</div>
+		</div>
+		<div class="section">
+			<div class="intro">
+				<h1>A Basic 3D Model Rendering with Three.js</h1>
+				<p>
+					This is a simple 3D rendering inspired by <a target="_blank" rel="noopener noreferrer" href="https://panic.com/transmit/">Transmit website</a>. It uses <a target="_blank" rel="noopener noreferrer" href="https://threejs.org/">three.js</a>, a JavaScript library based on WebGL that's easy to set up and provides various functionalities for 3D graphics.
+				</p>
+				<h2>Modeling</h2>
+				<p>
+					Modeling was done through C4D. The main idea was to have a sphere and select all the faces that map to land and extrude them out. I downloaded a world map and used it as a texture for a regular sphere so that I had a good reference I could work on. Selecting faces was the most tedious and time-consuming part of the whole project, espeically when dealing with those small islands in Southeast Asia. But later I found that it didn't really need to be precise as I was going to low-poly it anyway...
+				</p>
+				<div class="image_wrapper">
+					<img class="img_screenshot" src="assets/earth_1.png"/>
+					<p class="annotation">Texture for reference</p>
+				</div>
+				<p>
+					Since my reference image was a satellite map where it shows parts of the land close to the poles are covered by snow, I decided to map them seperately and extrude them a little bit more so it creates a feeling of snow covering the ground. Finally, just throw everything into a Polygon Reduction object and C4D will do the low poly trick for you.
+				</p>
+				<div class="image_wrapper">
+					<img class="img_screenshot" src="assets/earth_2.png"/>
+					<p class="annotation">Model</p>
+				</div>
+				<div class="image_wrapper">
+					<img class="img_screenshot" src="assets/earth_3.png"/>
+					<p class="annotation" style="margin-top: 4px;">A C4D render just for fun</p>
+				</div>
+
+				<h2>Coding</h2>
+				<p>
+					three.js webisite has a <a target="_blank" rel="noopener noreferrer" href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene">Getting Started Tutorial</a> which pretty much explains everything.
+					<br>
+					Some changes I made for my case: 
+				</p>
+				<h3>Using Orthographic (Parallel) Projection</h3>
+				<p>
+					I used orthographic projection instead of perspective to get a miniature look. To create an OrthographicCamera:
+				</p>
+				<pre class="prettyprint linenums">
+var camera = new THREE.OrthographicCamera(left, right, top, bottom, near, far);</pre>
+				<p>
+					The first 4 parameters define the boundary, and the corrdinate system has its origin at the center of your canvas.
+				</p>
+				<h3>Loading External .obj Files</h3>
+				<p>
+					three.js provides a bunch of primitive geometries but it would be easier if you do the modeling in a software and import your model into the scene. Supported external file formats include .obj and .stl. In my case, I used .obj files:
+				</p>
+				<pre class="prettyprint linenums">
+var loader = new THREE.OBJLoader();
+loader.load(
+	url,
+	function ( object ) {
+		// called when resource is loaded
+	}
+);</pre>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
