@@ -61,7 +61,7 @@
 				<p>
 					three.js webisite has a <a target="_blank" rel="noopener noreferrer" href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene">Getting Started Tutorial</a> which pretty much explains everything.
 					<br>
-					Some changes I made for my case: 
+					Some tips/changes I made for my case: 
 				</p>
 				<h3>Using Orthographic (Parallel) Projection</h3>
 				<p>
@@ -84,6 +84,10 @@ loader.load(
 		// called when resource is loaded
 	}
 );</pre>
+				<h3>Optimization for High DPI Displays</h3>
+				By default, THREE.WebGLRenderer renders at a @1x resolution. As a result, renderings on high DPI displays (e.g. macs with Retina Displays) will look blurry because of the higher pixel density they render at. This can be fixed by adjusting the pixel ratio of the renderer:
+				<pre class="prettyprint linenums">
+renderer.setPixelRatio(window.devicePixelRatio);</pre>					
 			</div>
 		</div>
 	</div>
