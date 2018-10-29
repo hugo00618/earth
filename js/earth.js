@@ -96,8 +96,6 @@ var init3D = function() {
 }
 
 $(document).ready(function() {
-	init3D();
-
 	$('#fullpage').fullpage({
 		licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 
@@ -106,7 +104,9 @@ $(document).ready(function() {
 		scrollOverflowOptions: {
 		     disablePointer: true,
 		}
-	}); 
+	});
+
+	init3D();
 
 	$('#btnLearnMore').click(function() {
 		$.fn.fullpage.moveSectionDown();
