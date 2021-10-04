@@ -39,21 +39,24 @@ var init3D = function() {
 
 	
 	// light
-	var keyLight = new THREE.DirectionalLight(0xfff8ef, 0.75);
-	keyLight.position.set(-100, 200, -50);
+	var keyLight = new THREE.DirectionalLight(0xfff8f0, 0.7);
+	keyLight.position.set(-400, 300, 0);
 
-	var keyLight2 = new THREE.DirectionalLight(0xfff8ef, 0.75);
-	keyLight2.position.set(-100, -200, -50);
+	var keyLight2 = new THREE.DirectionalLight(0xfff8f0, 0.6);
+	keyLight2.position.set(-400, -300, 0);
+
+	var keyLight3 = new THREE.DirectionalLight(0xfff8f0, 0.4);
+	keyLight3.position.set(400, 0, 200);
 
 	scene.add(camera);
 	camera.add(keyLight);
 	camera.add(keyLight2);
-
+	camera.add(keyLight3);
 
 	// object
-	var matOcean = new THREE.MeshPhongMaterial( { color: 0x488feb, specular: 0xffffff, shininess: 0, flatShading: THREE.SmoothShading } );
-	var matLand = new THREE.MeshPhongMaterial( { color: 0x6acc50, specular: 0xffffff, shininess: 0, flatShading: THREE.SmoothShading } );
-	var matIce = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0xffffff, shininess: 0, flatShading: THREE.SmoothShading } );
+	var matOcean = new THREE.MeshPhongMaterial( { color: 0x338bff, reflectivity: 0, specular: 0xaaaaaa, shininess: 0, flatShading: THREE.SmoothShading } );
+	var matLand = new THREE.MeshPhongMaterial( { color: 0x80e043, reflectivity: 0, specular: 0xaaaaaa, shininess: 0, flatShading: THREE.SmoothShading } );
+	var matIce = new THREE.MeshPhongMaterial( { color: 0xffffff, reflectivity: 0, specular: 0xffffff, shininess: 0, flatShading: THREE.SmoothShading } );
 
 	model = new THREE.Group();
 	var loader = new THREE.OBJLoader();
